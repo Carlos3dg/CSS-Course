@@ -1,0 +1,24 @@
+p .parragraph {
+    color: #fff;
+    background-color: #0c992a;
+}
+
+.parragraph::before {
+    content: "This is LOREM";
+    color: #fff;
+    background-color: #cc1919;
+    font-weight: bold;
+}
+
+.parragraph::after {
+    content: "This is LOREM";
+    color: #fff;
+    background-color: #cc1919;
+    font-weight: bold;
+}
+
+p::selection {
+    background-color: #a1171c96;
+    color: #fff;
+}
+
