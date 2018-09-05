@@ -1,0 +1,14 @@
+.tip::before{
+    content: "HOT TIP!";
+    color: #ffffff;
+    background-color:  #ff0000;
+    font-size: 2em;
+
+}
+
+.tip::after{
+    content: "GOOD WORK!";
+    font-size: 2em;
+    color: #ffffff;
+    background-color: green;
+}
