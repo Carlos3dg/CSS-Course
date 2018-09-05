@@ -36,20 +36,12 @@ table {
 	width: 70%;
 }
 .sidebar {
-<<<<<<< HEAD
-	margin-left: 75%; /*We extend the margin left to move the div to the right*/
-=======
 	margin-left: 75%; /*We extend the margin left to move the div to the right*/ 
->>>>>>> e3061e7309802919e46ab8b2e403a9afb93503fa
 	padding: 15px;
 	background: #E9F5FE;
 }
 
 body {
-<<<<<<< HEAD
-	color: #B1967C;
-}
-=======
 	color: #B1967C; /*Applied text color to the all text*/
 	font-family: "Palatino Linotype", Baskerville, serif; /*Text type to the all text*/ /*This style doesn't inherited to the h1*/
 	padding-top: 115px; /*Aplied a padding top to give space to the image that's at the top*/
@@ -96,4 +88,3 @@ p.intro {
 	margin-bottom: 15px;
 }
 /*Note. the selector "p.intro" doesn't have a space due to this selector declares that .intro is a class uses by a <p> tag in the document, in other words this selector affectd to all those p tags that have a class = "intro"*/
->>>>>>> e3061e7309802919e46ab8b2e403a9afb93503fa
