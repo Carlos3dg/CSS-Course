@@ -36,8 +36,11 @@ table {
 	width: 70%;
 }
 .sidebar {
-	margin-left: 75%;
+	margin-left: 75%; /*We extend the margin left to move the div to the right*/
 	padding: 15px;
 	background: #E9F5FE;
 }
 
+body {
+	color: #B1967C;
+}
