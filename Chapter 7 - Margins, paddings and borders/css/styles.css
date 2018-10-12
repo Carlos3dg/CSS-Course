@@ -1,0 +1,230 @@
+/* reset browser styles */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+body{
+    max-width: 800px;
+    margin: 0 auto;
+    height: 100%;
+    background-color: rgb(247, 226, 155);
+}
+
+.header {
+    width: 100%;
+    height: 10vh;
+    padding: 10px;
+}
+
+.header h1 {
+    margin: 6px; /*In this case the margin top and bottom value is 40px due to the element in which one this element is inside has a width of 800px, so it is recomended to use another measure property*/
+    text-align: center;
+}
+
+.paragraph1 {
+    margin: 10px;
+}                       
+
+.paragraph2 {
+    margin: 10px;
+}
+/*In this case the space between paragraph1 and paragraph2 is 10px, meaning that the web browser doesn't plus each margin and just implement the margin with more value or like in this case beacause this two elements have the same margin the space is just the margin that each one have without any kind of plus*/
+
+.footer{
+    width: 100%;
+    height: 150px;
+    padding: 4px;
+}
+
+.copyright {
+    margin: 10px 50px;
+}
+/*In this case the .copyright margin only applies inside the .footer class element when this one has a padding or border declared*/
+
+.collapse_margin{
+    width: 200px;
+    height: auto;
+    background-color: rgb(210, 35, 10);
+}
+
+.collapse_margin p {
+    color: white;
+    font-size: 25px;
+    margin: 20px;
+}
+
+.border_on{
+    width: 200px;
+    height: auto;
+    background-color: rgb(20, 30, 200);
+    border: 2px solid green;
+}
+
+.border_on p{
+    color: white;
+    font-size: 25px;
+    margin: 20px;
+}
+
+/*-----------------NEGATIVE MARGINS----------------*/
+.negative_margins-container{
+    font-size: 25px;
+}
+
+.subtitle{
+    font-size: 1em;
+    margin-bottom: 2%;
+}
+
+.paragraph{
+    font-size: 0.7em;
+}
+
+.border_headline{
+    border: 1px solid rgb(20, 151, 114);
+}
+
+.negative_margin-headline{
+    margin-top: -10px; 
+    background-color:white;   /*This negative margin healine overlap the .border_headline above it, but just its                                                      background and border and not its content*/
+}
+/*------------------------------------------------------------------*/
+.border-bottom_headline{
+    font-size: 1em;
+}
+
+.border-top_paragraph{
+    border-top: 1px solid rgb(210, 35, 10);  
+    margin-top: -10px;
+}
+
+/*In this example we try to simulate a border-bottom in the headline with the border-top from the paragraph, thanks to the negative margin in the paragraph we can simulate a negative border in the headline element*/
+
+/*------------------------------------------------------------------*/
+
+/*---------------------------DISPLAY SETTINGS-----------------------*/
+.left-right_space{
+    margin: 10px; /*An inline-elemnt doesn't applies top and bottom margins or padding. In this case the margin only is set in left and right sides*/
+    border: 1px solid green;
+}
+
+.four_sides-space{
+    display: inline-block;
+    margin: 10px; /*One way to applie four sides of margins or padding in an element is setting the display: inline-block property, this treats the element like an inline-element, but let it applie a vertical margin or padding property */
+    border: 1px solid green;
+}
+
+img{
+    display: block;
+}
+
+li{
+    display: inline;
+    background-color: cornflowerblue;
+}
+
+/* -------------------------------------- BORDERS ----------------------------- */
+/*.borders-topic_container{
+    display: flex;
+}*/
+
+.border_container{
+    width: 20%;
+    height: 6vh;
+    text-align: center;
+    padding: 1%;
+    margin-right: 4%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.border-solid_container{
+    border: 2px solid rgb(20, 151, 114);
+}
+
+.border-dashed_container{
+    border: 2px dashed rgb(20, 151, 114);
+}
+
+.border-dotted_container{
+    border: 2px dotted rgb(20, 151, 114);
+}
+
+.border-groove_container{
+    border: 2px groove rgb(20, 151, 114);
+    background-color: rgba(255, 255, 255, .5);
+}
+
+/*--------------------------------------- BORDER RADIUS------------------------------------*/
+.radius-topic_container{
+    height: auto;
+    width: 100%;
+}
+
+.radius_container{
+    border: 2px inset rgb(25, 205, 20);
+    width: 20%;
+    height: 4em;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    padding: 1%;
+    box-sizing: border-box;
+    margin-right: 4%;
+}
+
+.single-radius-value_container{
+    border-radius: 10px; /*Tis is a normal border radius where its horizontal radius is 10px and its vertical radius its 10px (this could be 10px/10px insted and it's exactly the same)*/
+}
+
+.different-radius-values_container{
+    border-radius: 0px 10px;
+}
+
+.combination-radius-values_container{
+    border-radius: 70px/35px; /*This declaration means that the horizontal radius value is 70px versus 35px from the vertical radius value. To create an oval figure it is neccesary to set an horizontal value greater than a vertical value. */
+}
+
+/*-------------------------------------BOX SHADOW---------------------------------*/
+.box-shadow_container{
+    width: 100%;
+    height: 100%;
+}
+
+.boxes-shadow_container{
+    width: 30%;
+    height: 50px;
+    margin: 0 auto 2%;
+    background-color: rgb(20, 151, 114);
+    text-align:center;
+}
+
+.box-shadow-label_style{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.basic-box-shadow {
+    box-shadow: 5px 4px 10px rgba(0,  0, 0, 0.5); /*The first value sets the horizontal shadow, a negative value in this part means a left shadow direction and a positive value means a right shadow direction. The second value declares the vertical shadow, it means the shadow eigther aboad the edge top (negative value) or below the edge bottom (positive value) */
+    /*The third value sets the width and blurry (borroso) of the shadow. A positive value gets more blur and wider shadow */
+}
+
+.inset-box-shadow{
+    box-shadow: inset 0 0 8px 4px rgba(0, 0, 0, 0.5);
+}
+
+.allsides-box-shadow{
+    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fake-border-box-shadow {
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 0 0 0 2px rgb(20, 30, 200);
+}
