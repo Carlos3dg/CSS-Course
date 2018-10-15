@@ -11,10 +11,13 @@ time, mark, audio, video {
 }
 
 body{
-    max-width: 800px;
-    margin: 0 auto;
     height: 100%;
     background-color: rgb(247, 226, 155);
+}
+
+.main-container{
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .header {
@@ -24,7 +27,7 @@ body{
 }
 
 .header h1 {
-    margin: 6px; /*In this case the margin top and bottom value is 40px due to the element in which one this element is inside has a width of 800px, so it is recomended to use another measure property*/
+    margin: 5%; /*In this case the margin top and bottom value is 40px due to the element in which one this element is inside has a width of 800px, so it is recomended to use another measure property*/
     text-align: center;
 }
 
@@ -39,12 +42,17 @@ body{
 
 .footer{
     width: 100%;
-    height: 150px;
-    padding: 4px;
+    height: 120px;
+    padding: 3%;
+    background-color: rgba(220, 0, 0, 0.2);
+    text-align: center;
+    box-sizing: border-box;
+    clear: both; /*This property tells to ignore those elements that has the float property in order to avoid to set the footer underneath those elements */
 }
 
 .copyright {
-    margin: 10px 50px;
+   /* margin: 10px 50px;*/
+    color: rgb(0, 0, 0);
 }
 /*In this case the .copyright margin only applies inside the .footer class element when this one has a padding or border declared*/
 
@@ -137,7 +145,7 @@ li{
 
 .border_container{
     width: 20%;
-    height: 6vh;
+    /*height: 6vh;*/
     text-align: center;
     padding: 1%;
     margin-right: 4%;
@@ -171,7 +179,7 @@ li{
 .radius_container{
     border: 2px inset rgb(25, 205, 20);
     width: 20%;
-    height: 4em;
+   /* height: 4em;*/
     vertical-align: middle;
     display: inline-block;
     text-align: center;
@@ -200,10 +208,11 @@ li{
 
 .boxes-shadow_container{
     width: 30%;
-    height: 50px;
+    /*height: 50px;*/
     margin: 0 auto 2%;
     background-color: rgb(20, 151, 114);
     text-align:center;
+    padding:1%;
 }
 
 .box-shadow-label_style{
@@ -227,4 +236,20 @@ li{
 .fake-border-box-shadow {
     border: 2px solid rgb(255, 255, 255);
     box-shadow: 0 0 0 2px rgb(20, 30, 200);
+}
+
+/*----------------------------------------- FLOATS -------------------------------------------*/
+
+/* BASICS */
+.float_img{
+    width: 25%;
+    float: right;
+}
+/* The float property lets an element to set beside other element. Here we collocated an image in the right side, due to the text or the elements that are after the image are collocated in the left side of the image. It is important to know that the value of the float property moves the element to that side so in that way the content behind this element follow the normal flow of the html ignoring the float element at all, and also we need to know that the content inside the elements next to the float element respect the float element but the background and borders do not respect the this element so they end up apering underneath the float element */
+
+/* RESOLVING CONFLICTS */
+.web-development_images{
+    width: 25%;
+    float: right;
+    clear: right; /*Here we ignore those elements that has a float right value*/
 }
