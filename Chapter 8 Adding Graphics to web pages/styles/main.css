@@ -1,0 +1,43 @@
+/*------------------------- CONTROLLING REPETITION ---------------------*/
+div {
+    width: 70%;
+    height: 500px;
+    background-image: url(../img/javascript.webp);
+    background-repeat: repeat; /*This is the default value and try to filled all the space where the image is beign set, this value repeats the image until filled all space in the container. In some cases the image is cut at the edge of the container*/
+}
+
+div {
+    width: 70%;
+    height: 500px;
+    background-image: url(../img/javascript.webp);
+    background-repeat: no-repeat; /*This value only shows one image in the left corner without any repetition*/
+}
+
+div {
+    width: 70%;
+    height: 500px;
+    background-image: url(../img/javascript.webp);
+    background-repeat: repeat-x; /*This value repeats the image at the top of the container in horizontal direction, in some cases the image could get cut in the right side of the container*/
+}
+
+div {
+    width: 70%;
+    height: 500px;
+    background-image: url(../img/javascript.webp);
+    background-repeat: repeat-y; /*This value repeats the image in vertical direction at the left side, like the repeat-x value this option could get cut, too but at the end of the container, in the down side*/
+}
+
+div {
+    width: 70%;
+    height: 500px;
+    background-image: url(../img/javascript.webp);
+    background-repeat: round; /*This value is similar to the repeat value, it fills all the container but without cut the image at the edges, to have this effect the browser adjust the image size and due to this the image get distort in some cases.*/
+}
+
+div {
+    width: 70%;
+    height: 500px;
+    background-image: url(../img/javascript.webp);
+    background-repeat: space; /*This value filled all the container without cut the images at the edges but introduce space between every image to get an apropiete tile.*/
+}
+
