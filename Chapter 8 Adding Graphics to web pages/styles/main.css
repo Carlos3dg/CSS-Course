@@ -1,3 +1,6 @@
+h1 {
+    text-align: center
+}
 /*------------------------- CONTROLLING REPETITION ---------------------*/
 div {
     width: 70%;
@@ -39,5 +42,33 @@ div {
     height: 500px;
     background-image: url(../img/javascript.webp);
     background-repeat: space; /*This value filled all the container without cut the images at the edges but introduce space between every image to get an apropiete tile.*/
+}
+
+/*------------------- POSITIONING BACKGROUND IMAGE ----------------------*/
+/* keywords */
+.positioning {
+    width: 70%;
+    height: 500px;
+    background-image: url(../img/javascript.webp);
+    background-repeat: repeat-y;
+    background-position: center bottom; /*We can use two set of keywords to position an image, first value can be left, center, right and the second value can be top, center, bottom*/
+}
+
+/* Precise values */
+.positioning {
+    width: 70%;
+    height: 500px;
+    background-image: url(../img/javascript.webp);
+    background-repeat: no-repeat;
+    background-position: -20px 30px; /*When we use precise values the first value controls the horizontal position and the second value controls the vertical position, while greater are the values closer are from right and bottom edges */
+}
+
+/* Porcentages */
+.positioning {
+    width: 70%;
+    height: 500px;
+    background-image: url(../img/javascript.webp);
+    background-repeat: no-repeat;
+    background-position: 80% 80%; 
 }
 
