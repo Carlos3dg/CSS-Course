@@ -50,8 +50,8 @@ div {
     width: 70%;
     height: 500px;
     background-image: url(../img/javascript.webp);
-    background-repeat: repeat-y;
-    background-position: center bottom; /*We can use two set of keywords to position an image, first value can be left, center, right and the second value can be top, center, bottom*/
+    background-repeat: repeat-x;
+    background-position: left bottom; /*We can use two set of keywords to position an image, first value can be left, center, right and the second value can be top, center, bottom*/
 }
 
 /* Precise values */
@@ -69,6 +69,53 @@ div {
     height: 500px;
     background-image: url(../img/javascript.webp);
     background-repeat: no-repeat;
-    background-position: 80% 80%; 
+    background-position: 80% 80%; /*Using porcentages to positioning an image is a little bit different, the first value indicate horizontal position and the second one indicate the vertical position, these two values get the coordinates to make a point in the style element but also get the coordinates from the background image, so that the coordinates from the container are the first point to insert the background image coordinates and in that way get our image positioned */
 }
+
+/*---------------------- FIXING IMAGES IN PLACE ---------------------*/
+body {
+    background-image: url(../img/javascript.webp);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;/*To make a background image fixed it is neccesary to define the background-attachment property with its value 'fixed'. This property has other value (scroll) but this is the default browser value*/
+}
+
+/*---------------------- ORIGIN AND CLIPPING -----------------------*/
+.origin-clipping__container{
+    border: 7px solid rgba(20, 35, 210, 0.3);
+    width: 30%;
+    height: 350px; 
+    background-image: url(../img/javascript.webp);
+    background-repeat: repeat;
+    display: inline-block;
+    margin-right: 2%;
+    box-sizing: border-box;
+    padding: 1%;
+}
+
+.origin-clipping__text {
+    float: left;
+    width: 30%;
+    margin-right: 2%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.border-box {
+    background-origin: border-box; /*The background image begins in the border area*/
+    background-clip: border-box /*And it is cut in the border are */
+}
+
+.padding-box {
+    background-origin: padding-box; /*The background image begins in the padding area*/
+    background-clip: padding-box; /*The image is cut after the padding area (borders are free of images)*/
+}
+
+.content-box {
+    background-origin: content-box;/*The background image begins in the content are*/
+    background-clip: content-box; /*The image is cut in the content area (paddins and borders are free of images)*/
+}
+
+/*-------------------- SCALING BACKGROUND IMAGE ------------------*/
+
 
