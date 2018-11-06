@@ -108,7 +108,7 @@ body {
 
 .padding-box {
     background-origin: padding-box; /*The background image begins in the padding area*/
-    background-clip: padding-box; /*The image is cut after the padding area (borders are free of images)*/
+    background-clip: padding-box; /*The image is cut in the the padding area (borders are free of images)*/
 }
 
 .content-box {
@@ -118,4 +118,39 @@ body {
 
 /*-------------------- SCALING BACKGROUND IMAGE ------------------*/
 
+.scaling__container {
+    width: 25%;
+    height: 0;
+    background-image: url(../img/javascript.webp);
+    background-repeat: no-repeat;
+    border: 3px solid rgba(0, 0, 230, 0.7);
+    padding-top: 30%; /*To have a responsive container*/
+    float: left;
+    margin: 1% 2%;
+}
+
+.scaling__text {
+    float: left;
+    width: 25.7%;
+    margin: 0 2% 1%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.absolute-scale{
+    background-size: 90% auto; /*We can use porcentage values or absolute values like pexels to define a size, the first value indicate the width size and the second one the height size, like in this case, it is possible to indicate just one of the values and the other it is determined by the browser according to the image width to get a ratio image intact.*/
+}
+
+.contain-scale {
+    background-size: contain; /*The contain keyword fit the image eigther to the width style element or the height style element, but never both this to maintain the aspect ratio of the image*/
+}
+
+.cover-scale {
+    background-size: cover; /*This value fit the image to the width style element and the height style element and at the same time try to maintain the aspect ratio of the image, so in most of the times the width style element could be fill with the width of the background image or in the other way, saying about the height, but one of them in the background image could be cut by the style element to preserve the ratio*/
+}
+
+.absolute-scale:hover {
+    background-color: rgba(201, 182, 15, 0.4);
+    background-blend-mode: color;
+}
 
