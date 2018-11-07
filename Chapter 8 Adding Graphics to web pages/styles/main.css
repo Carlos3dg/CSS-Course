@@ -1,6 +1,10 @@
 h1 {
     text-align: center
 }
+
+.clearfix {
+    clear: both;
+}
 /*------------------------- CONTROLLING REPETITION ---------------------*/
 div {
     width: 70%;
@@ -154,3 +158,59 @@ body {
     background-blend-mode: color;
 }
 
+/*--------------------- Multiple Background images --------------------*/
+.mutiple-image__container{
+    width: 75%;
+    height: 600px;
+    border: 3px solid rgba(20, 35, 210, 0.3);
+    margin: 2% auto;
+    background-color: rgb(187, 83, 14);
+    background-image: url(../img/ultrainstinto.png),
+                      url(../img/hit.png),
+                      url(../img/jiren.png);
+    background-repeat: no-repeat;
+    background-position: left top,
+                         center top,
+                         right top;
+
+    background-size: 25% 600px;
+}
+
+/*Here we set three background images in one container, the way we do this is with one property(background-image) containing three values separated with comas. The first value or the first image inserted is above the second one and the second one is above the third one and so on. Like in the previous example if we wanted to declare different position values or different size values we do with three values to every property and the order these values are declared are the same order according to the image.*/
+
+/*---------------------- LINEAR GRADIENTS -------------------*/
+.gradient__container {
+    width: 20%;
+    height: 250px;
+    margin: 1% 1%;
+    border: 3px solid rgba(0, 0, 0, 0.7);
+    float: left;
+}
+
+.gradient__text{
+    font-size: 25px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+/*For example if we wanted our linear gradient to start black at the top of the container and transition to white at the bottom of the element, we use 'to bottom' : */
+.to__bottom {
+    background-image: linear-gradient(to bottom, black, white);
+}
+
+/*If we wanted the white color at the left edge and the black at the right: */
+.to__left{
+    background-image: linear-gradient(to left, black, white);
+}
+
+/*Now if we want to get the white color in the right bottom corner and the black in the left top corner: */
+.to__right-bottom-corner{
+    background-image: linear-gradient(to bottom right, black, white);
+}
+
+/*We can also use degree values to set the position and other color values to set the color */
+.degree__value {
+    background-image: linear-gradient(135deg, rgb(224, 24, 191), rgb(255, 255, 255));
+} 
+/*Degree values follow the clock direction, for example 90 degrees are equal to right direction, 180 degrees are equal to bottom and so on, also this value indicate where the transition ends. In the previous example the transition ends at the right bottom corner, so that part is color white and this is the same to say 'to right bottom' */
