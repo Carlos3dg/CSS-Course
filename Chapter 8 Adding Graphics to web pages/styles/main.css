@@ -235,3 +235,31 @@ body {
                       linear-gradient(225deg, magenta, transparent),
                       linear-gradient(45deg, yellow, transparent);
 }
+
+/* Repeating Gradients */
+.repeating__gradient {
+    background-image: repeating-linear-gradient(45deg, rgb(0, 0, 200) 20px, rgb(93, 151, 236) 30px, rgb(0, 0, 200) 40px)
+}
+/*Here we say that our gradient starts at the bottom left corner with a deep blue color, then at the 20px position starts its transition until 30px, when the light blue is used, then this color ends at the 40px position to turn out in deep blue color again, automatically this last color try to fill the background element, but with the effect of repeating we can stop this function and repeat the process that starts with the first color */
+
+/* Radial Gradients */
+.simple__radial {
+    background-image: radial-gradient(white, rgb(50, 126, 241));
+}
+
+.circle__radial {
+    background-image: radial-gradient(circle, white, rgb(50, 126, 241))
+}
+
+.radial__position {
+    background-image: radial-gradient(circle at 20% 40%, white, rgb(50, 126, 241))
+}
+
+.closest-side__radial {
+    background-image: radial-gradient(closest-side circle at 20% 40%, white, rgb(50, 126, 241));
+}
+
+/* Repeating Radial Gradients */
+.repeating__radial {
+    background-image: repeating-radial-gradient(circle, red 20px, orange 30px, yellow 40px, red 50px);
+}
