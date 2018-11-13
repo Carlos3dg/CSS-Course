@@ -176,7 +176,7 @@ body {
     background-size: 25% 600px;
 }
 
-/*Here we set three background images in one container, the way we do this is with one property(background-image) containing three values separated with comas. The first value or the first image inserted is above the second one and the second one is above the third one and so on. Like in the previous example if we wanted to declare different position values or different size values we do with three values to every property and the order these values are declared are the same order according to the image.*/
+/*Here we set three background images in one container, the way we do this is with one property(background-image) containing three values separated with comas. The first value or the first image inserted is above the second one and the second one is above the third one and so on. Like in the previous example if we wanted to declare different position values or different size values we do with three values to every property and the order these values are declared are the same order according to the images.*/
 
 /*---------------------- LINEAR GRADIENTS -------------------*/
 .gradient__container {
@@ -185,13 +185,16 @@ body {
     margin: 1% 1%;
     border: 3px solid rgba(0, 0, 0, 0.7);
     float: left;
+    display: table;
 }
 
 .gradient__text{
     font-size: 25px;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.8);
+    display: table-cell;
     text-align: center;
+    vertical-align: middle;
 }
 
 /*For example if we wanted our linear gradient to start black at the top of the container and transition to white at the bottom of the element, we use 'to bottom' : */
@@ -214,3 +217,21 @@ body {
     background-image: linear-gradient(135deg, rgb(224, 24, 191), rgb(255, 255, 255));
 } 
 /*Degree values follow the clock direction, for example 90 degrees are equal to right direction, 180 degrees are equal to bottom and so on, also this value indicate where the transition ends. In the previous example the transition ends at the right bottom corner, so that part is color white and this is the same to say 'to right bottom' */
+
+/* Color Stops */
+/*You can add more than two colors, the next example starts green at the left, then begins white in the center and end up red in the right*/
+.color__stops {
+    background-image: linear-gradient(to right, rgb(0, 200, 0), rgb(255, 255, 255), rgb(220, 0, 0));
+}
+
+/*You can place the different color stops at more specific locations in the background by adding a second value after the color: */
+.specific__location {
+    background-image: linear-gradient(to right, rgb(0, 200, 0), rgb(255, 255, 255) 30%, rgb(255, 255,255) 70%,  rgb(220, 0, 0));
+}
+/*We can use an specific location for one or more colors in our gradient. In this example we use the white color at the 30% of the width element and then the second white color extends to the 70% of the width element. Generally we don't use specific locations for the first and the last color, due to the browser knows that these colors starts at 0% and ends at the 100%, however we can make use of this and add a specific location to these colors to make a solid color further at the beginig or at the end or both.*/
+
+.multiple__gradients {
+    background-image: linear-gradient(cyan, transparent),
+                      linear-gradient(225deg, magenta, transparent),
+                      linear-gradient(45deg, yellow, transparent);
+}
