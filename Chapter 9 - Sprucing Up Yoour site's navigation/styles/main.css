@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    background-color: green;
+    border-top: 3px solid gray;
+    border-bottom: 3px solid gray;
+}
+
+h2, h3 {
+    display: inline-block;
+}
+
+h2 {
+    border-bottom: 2px groove gray;
+    width: 100%;
+}
+
+h3 {
+    border-bottom: 2px groove gray;
+}
+
+.subtopic {
+    background-color: rgb(230, 222, 116);
+    width: 100%;
+    padding: 1.5%;
+    margin-bottom: 1%;
+
+}
+
+.content {
+    padding: 2%;
+    background-color: rgb(233, 228, 164);
+}
+
+/*------------- SELECTING WHICH LINKS TO STYLE -------------*/
+
+a {
+    color: green; /*A generi style, this style has effect over all types of pseudo-class (:active, :link, etc.)*/
+}
+
+.beveled__button {
+    display: inline-block;
+    background-color: #b1b1b1;
+    color: #fff;
+    font-weight: bold;
+    border-width: 4px;
+    border-style: solid;
+    border-top-color: #dfdfdf;
+    border-right-color: #666;
+    border-bottom-color: #333;
+    border-left-color: #858585;
+    padding: 15px 2%;
+} 
+
+/*A beveled style button needs to have four defferent colors in every border, but with the following rules:
+ one border should be the lightest while the opposite border is the darkest and the other two side should have shades in between lit and shadow borders*/
+
+.beveled__button:hover {
+    background-color: #949090;
+    border-top-color: #333;
+    border-right-color: #858585;
+    border-bottom-color: #dfdfdf;
+    border-left-color: #666;
+}
+
+.linear__button {
+    background-color: #ee432e;
+    background-image: -webkit-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+    border: 1px solid #951100;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4), 0 1px 3px #333;
+    padding: 12px 20px 14px 20px;
+    text-decoration: none;
+    color: #fff;
+    font: bold 20px/1 "helvetica neue", helvetica, arial, sans-serif;
+    text-align: center;
+    text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
+}
