@@ -84,3 +84,63 @@ a {
     text-align: center;
     text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
 }
+
+/*--------------- NAVIGATION BARS -------------*/
+/*General styles in a navigation bar*/
+.navbar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+/*These three properties always will be necccessary when we work we nav bars just to eliminate the bullets beside them and erase the space indented*/
+
+/* Vertical Nav Bar */
+.vertical__link {
+    display: block; /* To display the width of the element at the vertical edges of its parent*/
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    border-top: 1px solid rgb(240, 184, 31);
+}
+/*Every link has a height of 2em and a line-height of 2em, this two properties need to be equal in order to center the links in vertical direction*/
+
+.vertical__nav {
+    width: 18%; /*This is the size that every link will take*/
+    border: 1px solid rgb(240, 184, 31);
+}
+
+/* Horizontal Nav Bar */
+.horizontal__nav-inline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px dashed #000;
+    text-align: center; /*To center all the navbar*/
+}
+/*This are the general styles to eliminate the default values from unordered list*/
+
+.horizontal__nav-inline li {
+    display: inline;
+}
+/*Now it is neccessary to display the list elements in inline to put it in horizontal direction*/
+
+.inline__links {
+    display: inline-block;
+    border: 1px dashed #000;
+    border-bottom: none;
+    padding: 5px 15px 5px 15px;
+    background-color: #eaeaea;
+    text-decoration: none;
+    color: #333;
+}
+/*In this example every link is not touching each other, it means, there is a space between each other, this due to the way web browsers treat the space between </li> and <li> inside the HTML, so one way to get around this is to put </li> and <li> together in one line, like this
+<ul>
+    <li><a></a></li><li><a></a></li>
+</ul>
+*/
+/*Another way to get around this is to add a negative margin to the list elements like this:*/
+.horizontal__nav-inline li {
+    margin-right: -5px;
+}
+/*This tecnique is not recommended either, since the exact value to get together every link could variant*/
+
