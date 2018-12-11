@@ -177,3 +177,26 @@ a {
     font-weight: bold;
 }
 
+/* Styling particular types of links */
+a[href^='http'] {
+    color: rgb(25, 90, 170);
+}
+/* This kind of selector are called attribute selectors and with them it is possible to look for an HTML element with an specific attribute and with a detemined value. This example looks for the <a> elements that has the href attirbute with an initial value of 'http' */
+
+a[href*='://'] {
+    border: 1px solid rgb(25, 90, 170);
+    text-decoration: none;
+}
+/* Here we look for the href attribute that has in its string value the '://' characters, it doesn't matter where the characters where in */
+
+a[href^='mailto:'] {
+    background-color: rgb(25, 90, 170);
+    color: #fff;
+}
+/*This example is similar to the first one, here we look for the links that has a mailto in the begining of their href value */
+
+a[href$='.pdf'] {
+    font-style: italic;
+}
+
+/* Here we just apply an italic text format to the links that end in .pdf in their href value */
