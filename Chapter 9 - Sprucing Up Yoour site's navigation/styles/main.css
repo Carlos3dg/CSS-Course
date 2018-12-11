@@ -144,3 +144,36 @@ a {
 }
 /*This tecnique is not recommended either, since the exact value to get together every link could variant*/
 
+/* Horizontal float nav bar */
+.horizontal__nav-float {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border-bottom: 3px solid rgb(204, 204, 204);
+    overflow: hidden; /*This property detects the float elements to adjust the parent element size according to these kind of links.*/
+}
+
+.horizontal__nav-float li {
+    float: left;
+}
+
+.float__links {
+    width: 12em;
+    display: block;
+    text-align: center;
+    border: 3px solid rgb(204, 204, 204);
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    padding: 10px;
+    margin-right: 5px;
+    background-color: rgb(95, 95, 95);
+    background-image: -webkit-linear-gradient(rgb(175,175,175), rgb(95,95,95));
+    background-image: -moz-linear-gradient(rgb(175,175,175), rgb(95,95,95));
+    background-image: -o-linear-gradient(rgb(175,175,175), rgb(95,95,95));
+    background-image: linear-gradient(rgb(175,175,175), rgb(95,95,95));
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
