@@ -1,0 +1,180 @@
+:root {
+    --containerColor: rgb(162, 216, 247);
+}
+html, body {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+h1 {
+    font-size: 1.4em;
+    text-align: center;
+    margin: 25px 0 25px 0;
+}
+
+h2 {
+    font-size: 1.2em;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #fff;
+}
+
+h3 {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+p, span {
+    font-size: 0.9em;
+}
+
+.container {
+    width: 94%;
+    margin: 0 auto 15px;
+    padding: 10px;
+    background-color: var(--containerColor);
+}
+
+.sub__container {
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sub__container h3 {
+    flex: 0 0 100%;
+    height: 1em !important;
+}
+
+/* TRANSFORMS */
+
+/*Rotate*/
+.rotate, .translate, .skew {
+    width: 17%;
+    padding: 7% 0;
+    text-align: center;
+    border: 2px solid rgb(20, 104, 200);
+}
+
+.rotate-thirty-five {
+    -webkit-transform: rotate(25deg);/*Vendor prefixe to Chrome, Safari and Opera*/
+    -moz-transform: rotate(25deg);/*Vendor prefixe to Firefox*/
+    -o-transform: rotate(25deg);/*Vendor prefixe to Opera10.5*/
+    -ms-transform: rotate(25deg); /*Vendor prefixe to IE */
+    transform: rotate(25deg);
+}
+
+.rotate-ahoundred-eighty {
+    -webkit-transform: rotate(180deg);/*Vendor prefixe to Chrome, Safari and Opera*/
+    -moz-transform: rotate(180deg);/*Vendor prefixe to Firefox*/
+    -o-transform: rotate(180deg);/*Vendor prefixe to Opera10.5*/
+    -ms-transform: rotate(180deg); /*Vendor prefixe to IE */
+    transform: rotate(180deg);
+}
+
+.rotate-negative-degrees {
+    -webkit-transform: rotate(-90deg);/*Vendor prefixe to Chrome, Safari and Opera*/
+    -moz-transform: rotate(-90deg);/*Vendor prefixe to Firefox*/
+    -o-transform: rotate(-90deg);/*Vendor prefixe to Opera10.5*/
+    -ms-transform: rotate(-90deg); /*Vendor prefixe to IE */
+    transform: rotate(-90deg);
+}
+/*The transform property has a function to rotate any element we want, this function is called rotate and to work with it you need to put a number follow by the word deg inside parentheses, the valous you insert move the element in the clock direction and if you put negative values you move the element to the left direction*/
+
+/*Scale*/
+.normal-scale {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px solid rgb(20, 104, 200);
+}
+
+.scale-two {
+    transform: scale(2);
+}
+
+.scale-half {
+    transform: scale(0.5);
+}
+/*The scale function growth any element applied, the num inside it multiply the size of the element, 2 is the double and 0.5 is the half size.
+When the size element is modify by scale not only the element itself is modify but the elements inside it are too*/
+
+/*It is posible to resize the vertical and horizontal dimensions differently using scale(x, y)*/
+.scale-x-y {
+    transform: scale(1, 2);
+}
+/*In the previous example, the first value refers to the horizontal size and the second value modify the vertical size (x, y)*/
+
+/*In case you just want to resize one axis, either x or y, you can use scaleX() or scaleY()*/
+.scale-x {
+    transform: scaleX(1.4);
+}
+
+.scale-y {
+    transform: scaleY(1.4);
+}
+
+/*Before finish, there's another value you which you can work with scale, this is a negative number, if you put a negative number you flip around the element*/
+.scale-flip {
+    transform: scale(-1);
+} /*Here you flip-around the horizonta and vertical axis, but to just flip the x axis or the y one we write the next values:*/
+
+.scale-flip-x {
+    transform: scaleX(-1);
+}
+
+.scale-flip-y {
+    transform: scaleY(-1);
+}
+
+/*Note.Eighter rotate and scale are function that modify the size and position of an element, this modification can overlap other elements*/
+
+/*Translate*/
+/*This function moves an element from its current position, either right and left or up and down*/
+/*Example: Moving and element 2px to the left and 3px to down when the mouse pass over it*/
+.translate:hover {
+    transform: translate(2px, 3px);
+} /*Here the firts value represent the movement in direction right-left and the second value represent the movement from up-down, if we put negative values we move the element to the left and to the up repectively*/
+
+/*You can also provice a translate value for the horizontal or vetical movement, like follow:*/
+.translate-x:hover {
+    transform: translateX(5px);
+}
+
+.translate-y:hover {
+    transform: translateY(5px)
+}
+
+/*Note. When you move and element with the trasnlate function, the browser not interpret this movement, this means that although the element was move with this function the original space where this should be stays there. Other point is that you can use any value in the function: em, px, porcentages, etc.*/
+
+/*Skew*/
+/*The skew function lets you slant the horizontal and vertical axels in an element, this can give an element a three dimensional feel*/
+
+/*For example: To slant the horizontal axel to 45 degrees we need to provide just the firts value, the second one is the vertical, so the horizontal values can take 0 to 360 degrees and this values  move the vertical lines of the element to the left*/
+.skew-x {
+    transform: skew(45deg, 0)
+} /*Here we have an object with its vertical lines pointed to the left direction, while the degrees increase the vertical lines moves more to the left*/
+
+/*On the other hand the second value moves the horizontal lines of an element to the right direction, while the degrees increase the horizontal lines move more to the right*/
+.skew-y {
+    transform: skew(0, 45deg);
+}
+
+/*Also we can work with the two directions:*/
+.skew-x-y {
+    transform: skew(25deg, 50deg);
+}
+
+
