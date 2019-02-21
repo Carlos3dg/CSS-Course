@@ -1,5 +1,6 @@
 :root {
     --containerColor: rgb(162, 216, 247);
+    --linkColor: rgb(82, 80, 80);;
 }
 html, body {
     font-size: 18px;
@@ -35,6 +36,13 @@ p, span {
     font-size: 0.9em;
 }
 
+a {
+    text-decoration: none;
+    color: var(--linkColor);
+    font-weight: 600;
+    display: inline-block;
+}
+
 .container {
     width: 94%;
     margin: 0 auto 15px;
@@ -59,7 +67,11 @@ p, span {
 /* TRANSFORMS */
 
 /*Rotate*/
-.rotate, .translate, .skew {
+.rotate, 
+.translate, 
+.skew, 
+.multiple
+/*.transition__container*/ {
     width: 17%;
     padding: 7% 0;
     text-align: center;
@@ -177,4 +189,59 @@ When the size element is modify by scale not only the element itself is modify b
     transform: skew(25deg, 50deg);
 }
 
+/*Multiple transformations*/
+/*It is possible to apply multiple transformations at the same time, you just need to write each function separetely by a space like follow:*/
+.rotate-scale {
+    transform: rotate(45deg) scale(1.5);
+}
+/*The order that the functions are written is the order the browser apply the functions, this doesn't matter so much, except when we use the translate function. We have two examples below to see de differences: */
 
+.rotate-translate { 
+    transform: rotate(45deg) translate(10px, 15px);
+} /*Here we applied first the rotate function, so the element is rotated and then it is moved according to the directions pointed by the horizontal and vertical axis, here we applied 45 degrees to the right, so the bottom ends pointed a little to the left and the right side ends pointed a little to the right, so the first value in the translate function moves the element to the right due to the left side is pointing to this direction and the second value moves the element to the left due to the bottom is pointing to that side. */
+
+.translate-rotate {
+    transform: translate(10px, 15px) rotate(45deg);
+}
+/*On the onther hand if we first applied the translate function, the result is that the rotation is applied where the element is moved, for example if we move it to the right, then the rotation is applied in that position of the web page.*/
+
+/*Origin*/
+/*With the transform-origin property it is possible to move the point where the transform functions are rotate, scale or skew.
+Normally this propeties take the center of the element to apply their function, but with origin we can move that point to another position out of the center*/
+/*Example rotating elements:*/
+/*Center*/
+.center {
+    transform: rotate(35deg);
+} /*The result is normal, since the point took by the rotate function is the center from there moves 35 degrees to the right*/
+
+/*left-top*/
+.left-top {
+    transform-origin: left top;
+    transform: rotate(35deg);
+} /*Here the point is in the left-top of the element, so it moves 35 degrees to the right from there*/
+
+/*right-bottom*/
+.right-bottom {
+    transform-origin: right bottom;
+    transform: rotate(35deg);
+} /*and here the rotate moves from the right and bottom position fo the element.*/
+
+/* TRNSITIONS */
+.btn__transition {
+    border: 2px solid rgb(241, 226, 14);
+    padding: 18px 10px;
+    background-color: rgb(239, 164, 80);
+    transition-property: color, background-color; /*Here we define the properties to be animated, we can use the word all to animate all properties that makes a change*/
+    transition-duration: 2s; /*This is the time that the animation is going to take to be finish, we can use seconds(s) and milliseconds(ms)*/
+} /*Normally the transition is defined in the default design*/
+
+.btn__transition:hover {
+    background-color: rgb(230, 104, 21);
+    color: #fff;
+}
+/*In the previous example we have animate a button when the visitor mouses over it, the transition effect can work with fou properties:
+    *Transition-property: Define the property where the animation is going to be applied.
+    *Transition-duration: Represents the time that is going to take the animation.
+    *Transition-timing-function: Defines the type of animation used.
+    *Transition-delay: This declared a space of time before starting the animation.
+*/
