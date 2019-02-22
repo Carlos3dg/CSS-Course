@@ -227,6 +227,10 @@ Normally this propeties take the center of the element to apply their function, 
 } /*and here the rotate moves from the right and bottom position fo the element.*/
 
 /* TRNSITIONS */
+.transition__container {
+    width: 100%;
+}
+
 .btn__transition {
     border: 2px solid rgb(241, 226, 14);
     padding: 18px 10px;
@@ -245,3 +249,44 @@ Normally this propeties take the center of the element to apply their function, 
     *Transition-timing-function: Defines the type of animation used.
     *Transition-delay: This declared a space of time before starting the animation.
 */
+
+/*Transition timing function*/
+.btn__timing {
+    border: 2px solid rgb(241, 29, 14);
+    padding: 18px 10px;
+    margin-bottom: 15px;
+    background-color: rgb(236, 213, 186);
+    display: block;
+    width: 100px;
+    transition-property: all;
+    transition-duration: 1.5s;
+}
+
+.ease {
+    transition-timing-function: ease; /*This i the default value, begins the animation slow, speeds up in the middle and slows down at the end*/
+}
+
+.ease-in {
+    transition-timing-function:ease-in;
+}
+
+.ease-out {
+    transition-timing-function: ease-out;
+}
+
+.ease-in-out {
+    transition-timing-function: ease-in-out;
+}
+
+.linear {
+    transition-timing-function: linear; /*This value provie an a stedy change alogn the entire length*/
+}
+
+.bazier {
+    transition-timing-function:cubic-bezier(0.36, 1.1, 0.37, 1.15); /*The cubic-bezier value works as a line where is steeper is gets the move quickly and if is flatter gets slower (steeper: empinado, flatter: plano)*/
+}
+
+.btn__timing:hover {
+    transform: translateX(100px);
+}
+/*Note. As the duration property, the timing function also can declare one animation to every property.*/
