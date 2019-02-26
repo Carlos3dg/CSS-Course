@@ -357,3 +357,130 @@ Normally this propeties take the center of the element to apply their function, 
 }
 
 /*It is necessary to know that animations and transitions can crash the browse, so it is recomiended to add these properties to the opacity, rotate, scale and translate, these properties are smooth to handle the load browser.*/
+
+/* ANIMATIONS */
+/*Animations are a kind of function where you can declare different properties to be animated in different parts of the animation cicle, in the transition property we need to define two selectors one to define the transition and another to detect the change in the properties we want to animate, but with the animation it is not necessary to define a trigger, you instead define amounts of time, to make these changes in the properties */
+
+/*To create an animation we first need to define the animation and then declare the different parts we want the animation to make changes over the properties*/
+/*Here we define the animation name, whose is fadeIn*/
+@keyframes fadeIn {
+    /*From means to start the animation with the opacity in 0*/
+    from {
+        opacity: 0;
+    }
+    /*To means to end the animation with the opacity in 1*/
+    to {
+        opacity: 1;
+    }
+}
+/*Instead of from and to we can use percentage values, to define in which part of the animation we want the change (0% instead of from and 100% instead of to)*/
+
+/*For example, if we wanted to change a div box in three different colors during an animation we could write something like this:*/
+@keyframes glow {
+    /*Starts with a yellow color*/
+    0% {
+        background-color: yellow;
+    }
+    /*When the animation goes in 25% change to blue until the animation gets the 75%*/
+    25%, 75% {
+        background-color: blue;
+    }
+    /*From 76% to 100% the animation goes and end to red*/
+    100% {
+        background-color: red;
+    }
+}
+
+/*We can also apply a set of css properties inside a percentage keyframe at one moment to go again to another moment of the animation. Let's say we want to turn our div box from yellow to blue to orange to blue and then to orange again to finally ends in red */
+@-webkit-keyframes glow {
+    /*Here starts*/
+    0% {
+        background-color: yellow;
+    }
+    /*Goes to blue at 20% and change to orange but goes to blue again at 60%*/
+    20%, 60% {
+        background-color: blue;
+    }
+    /*Change to orange at 40%, then returns to blue but goes to be orange again at 80%*/
+    40%, 80% {
+        background-color: orange;
+    }
+    /*Ends in red*/
+    100% {
+        background-color: red;
+    }
+}
+
+@keyframes glowExample {
+    /*Here starts*/
+    0% {
+        background-color: yellow;
+    }
+    /*Goes to blue at 20% and change to orange but goes to blue again at 60%*/
+    20%, 60% {
+        background-color: blue;
+    }
+    /*Change to orange at 40%, then returns to blue but goes to be orange again at 80%*/
+    40%, 80% {
+        background-color: orange;
+    }
+    /*Ends in red*/
+    100% {
+        background-color: red;
+    }
+}
+/*Note. We need to write the vendor prefixes like in the previous example*/
+
+/*Applying an Animation*/
+/*Now that we have the animation keyframe define is necessary to apply it to an element or any kind of selector, such as pseudo-class, classes or id */
+.animation__box {
+    width: 10%;
+    padding: 3% 0;
+    text-align: center;
+    border: 2px solid #fff;
+    font-weight: 600;
+    -webkit-animation-name: glowExample; /*To make it works in most of the browsers*/
+    -webkit-animation-duration: 4s;
+    animation-name: glowExample;
+    animation-duration: 4s;
+    animation-timing-function: ease-in;/*Here we apply a kind of timing function to all the animation*/
+}
+/*Here the animation apply when the page get loads due to the element is in the DOM already, but to apply an animation when the page is loaded you just need to put an element selector and applied to it*/
+
+/*Timing the animation*/
+/*As we could see in the above example, it is possible to apply an animation timing function as we can with the transitions, however it is possible to set a timing function to a specific percentage inside the keyframe:*/
+.animation__box2 {
+    width: 10%;
+    padding: 3% 0;
+    text-align: center;
+    border: 2px solid #fff;
+    font-weight: 600;
+    -webkit-animation-name: glowExample2; /*To make it works in most of the browsers*/
+    -webkit-animation-duration: 4s;
+    animation-name: glowExample2;
+    animation-duration: 4s;
+}
+
+@keyframes glowExample2 {
+    /*Here starts*/
+    0% {
+        background-color: yellow;
+        animation-timing-function: ease-out;
+    }
+    /*Goes to blue at 20% and change to orange but goes to blue again at 60%*/
+    20%, 60% {
+        background-color: blue;
+        transition-timing-function:cubic-bezier(0.36, 1.1, 0.37, 1.15); 
+    }
+    /*Change to orange at 40%, then returns to blue but goes to be orange again at 80%*/
+    40%, 80% {
+        background-color: orange;
+        transition-timing-function:cubic-bezier(0.36, 1.1, 0.37, 1.15); 
+    }
+    /*Ends in red*/
+    100% {
+        background-color: red;
+    }
+}
+
+/*In this way we get an effect function when the yellow turns blue and when the blue turns orange and when the orange turns red*/
