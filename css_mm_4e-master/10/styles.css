@@ -82,6 +82,38 @@ nav a {
 }
 
 /* your styles here */
+nav a {
+	-webkit-transition: -webkit-transform .5s,
+						background-color 1s ease-in .5s;
+	transition: transform .5s,
+				background-color 1s ease-in .5s;
+}
+
+nav a:hover {
+	background-color: rgb(200, 100, 20);
+	-webkit-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	transform: scale(1.5);
+}
+
+/*Adding animations*/
+@keyframes logo {
+	from {
+		transform: rotate(0) scale(.5);
+		left: 120%;
+	}
+	50% {
+		transform: rotate(-720deg) scale(.5);
+		left: 0;
+	}
+	to {
+		transform: rotate(0) scale(1)
+	}
+}
+
+.logo {
+	animation: logo 3s;
+}
 
 
 
