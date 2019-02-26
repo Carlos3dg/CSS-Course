@@ -2,6 +2,7 @@
     --containerColor: rgb(162, 216, 247);
     --linkColor: rgb(82, 80, 80);;
 }
+
 html, body {
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
@@ -484,3 +485,59 @@ Normally this propeties take the center of the element to apply their function, 
 }
 
 /*In this way we get an effect function when the yellow turns blue and when the blue turns orange and when the orange turns red*/
+
+/*Finishing the animation*/
+
+/*Animation-itaration-count and animation-fill-mode*/
+.animation__box3 {
+    width: 10%;
+    padding: 3% 0;
+    text-align: center;
+    border: 2px solid #fff;
+    font-weight: 600;
+    -webkit-animation-name: glow1; /*To make it works in most of the browsers*/
+    -webkit-animation-duration: 6s;
+    animation-name: glow1;
+    animation-duration: 4s;
+    animation-iteration-count: 4; /*Defines the number of times that an animation should be repeted. Note we can use infinite */
+    animation-direction: alternate; /*Makes a reverse animation when the firts iteration finish and then goes to the normal way in the next interation and so on*/
+    animation-fill-mode: forwards; /*This property can define the values or styles applied before the animation starts (during the animation delay) and the after the animation finish(the final value that the animatio takes to keep in that design)*/
+}
+
+@keyframes glow1 {
+    /*Starts with a yellow color*/
+    0% {
+        background-color: yellow;
+    }
+    /*When the animation goes in 25% change to blue until the animation gets the 75%*/
+    33%, 66% {
+        background-color: blue;
+    }
+    /*From 76% to 100% the animation goes and end to red*/
+    100% {
+        background-color: red;
+    }
+}
+
+/*Animation Shorthand*/
+.animation__box3 {
+    animation-name: glow1;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: 4; 
+    animation-direction: alternate;
+    animation-fill-mode: both; 
+}
+
+.animation__box3 {
+    -webkit-animation: glow1 4s linear 2s 4 alternate both;
+    animation: glow1 4s linear 2s 4 alternate both;
+}
+/*To use the animation shorthand we write the properties in same order like the first example (animation-name, animation-duration, animation-timing-function, animtion-delay, animation-interation-count, animation-direction and animation-fill-mode)*/
+
+/*Pausing and Animation*/
+/*There's a property to paused and get run again an animation, this property just can take two values, pause and running. Normally we applied this property in a pseudo-class or with a click using javascript*/
+.animation__box3:hover {
+    animation-play-state: paused;
+}
