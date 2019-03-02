@@ -1,0 +1,68 @@
+html, body {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 25px 0 25px 0;
+}
+
+h2 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+p, span {
+    font-size: 0.9em;
+}
+
+.container {
+    width: 100%;
+    padding: 3% 5%;
+}
+
+/* STYLING TABLES */
+.tdg__songs {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center; /*This centers all cells in the table*/
+    border: 1px solid rgb(75, 75, 75); /*This just apply a border to the table but not to the individual cells*/
+    border-collapse: collapse; /*To remove space between borders and remove double size borders*/
+}
+
+.song,
+.album {
+    width: 35%;
+}
+
+.year {
+   width: 30%;
+}
+
+.tdg__songs td, .tdg__songs th {
+    padding: 10px 4px; /*We apply a padding to these elements*/
+    vertical-align: middle; /*As this property isn't inherit, we apply it to the td and th elements*/
+    border: 1px solid rgb(75, 75, 75); /*Aplies a border to every cell*/
+}
+
+.tdg__songs th {
+    background-image: linear-gradient(to bottom, rgb(7, 104, 173), rgb(161, 207, 240));
+}
+
+.tdg__songs tr:nth-of-type(even) {
+    background-color: rgb(161, 207, 240); /*This style apply to all even rows(pares)*/
+}
+

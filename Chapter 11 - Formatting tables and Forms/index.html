@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <h1>Chapter 11 - Formatting tables and forms</h1>
+    <div class="container container__table">
+        <h2>Styling tables</h2>
+        <table class="tdg__songs">
+            <caption align="bottom">
+                Table 1: Best Three Days Grace songs
+            </caption> <!--This add a title to the table-->
+            <colgroup>
+                <col class="song" /> <!--These elements are bound to the columns-->
+                <col class="album" />
+                <col class="year" />
+            </colgroup> 
+            <thead>
+                <tr>
+                    <th scope="col">Song</th>
+                    <th scope="col">Album</th>
+                    <th scope="col">Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr> 
+                    <td>Never Too Late</td>
+                    <td>One-X</td>
+                    <td>2006</td>
+                </tr>
+                <tr>
+                    <td>Chalk Outline</td>
+                    <td>Transit Of Venus</td>
+                    <td>2012</td>
+                </tr>
+                <tr>
+                    <td>The Good Life</td>
+                    <td>Life Starts Now</td>
+                    <td>2009</td>
+                </tr>
+                <tr>
+                    <td>I Hate Everything About You</td>
+                    <td>Three Days Grace</td>
+                    <td>2003</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
