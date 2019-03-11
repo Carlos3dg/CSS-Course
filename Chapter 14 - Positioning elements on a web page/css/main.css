@@ -1,0 +1,104 @@
+:root {
+    --containerColor: rgb(176, 82, 238);
+    --textColor: rgb(245, 250, 249);
+}
+
+html, body {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.4em;
+    margin: 25px 0 25px 0;
+
+}
+
+h2 {
+    font-size: 1.2em;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #fff;
+}
+
+h3 {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+p, span {
+    font-size: 0.9em;
+}
+
+ul {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto 25px;
+    padding: 15px 25px;
+    background-color: var(--containerColor);
+    color: var(--textColor);
+    position: relative;
+}
+/*When you are creating a absolute positionated element sometimes is just enough to declare one or two properties from the browser window edges, here we declare left and top*/
+.positionExample {
+    width: 70px;
+    background-color: rgb(242, 245, 51);
+    border: 2px solid #fff;
+    position: absolute;
+    left: -3%;
+    top: 90%;
+    font-weight: 600;
+    font-size: 0.7em;
+    color: #000;
+    padding: 1%;
+}
+
+/* General Style for the element that wraps the absolute positionated elements */
+.absolutePositioning {
+    width: 40%;
+    height: 150px;
+    display: inline-block;
+    padding: 5%;
+    background-color: rgb(95, 228, 233);
+}
+
+p.absolutePositioning{
+    padding: 0;
+    height: 0;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 0.75em;
+    text-align: center;
+}
+
+/* Absolute Positionated elements */
+.absoluteElement {
+    width: 55px;
+    height: 55px;
+    background-color: rgb(242, 245, 51);
+    border: 2px solid #fff;
+    position: absolute;
+    left: 70%;
+    top: 15%;
+}
+
+.container .absolutePositioning:nth-child(2), .container p.absolutePositioning:nth-child(4) {
+    margin-right: 18%;
+}
+
+/* One of the elements that wraps the absolute element is going to have a position property */
+.container .absolutePositioning:nth-child(2) {
+    position: relative;
+}
+/* In the exercise the absolute element nested the element that has a position property its left and top are defined according with the edges from the parent element, on the other hand the element that is nested inside the element that no has any position property, its position values are defined according with the browser edges, or in this case the father of the father */
