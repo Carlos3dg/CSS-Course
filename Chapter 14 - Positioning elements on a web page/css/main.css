@@ -49,6 +49,8 @@ ul {
     background-color: var(--containerColor);
     color: var(--textColor);
     position: relative;
+    clear: both;
+    overflow: hidden;
 }
 /*When you are creating a absolute positionated element sometimes is just enough to declare one or two properties from the browser window edges, here we declare left and top*/
 .positionExample {
@@ -102,3 +104,58 @@ p.absolutePositioning{
     position: relative;
 }
 /* In the exercise the absolute element nested the element that has a position property its left and top are defined according with the edges from the parent element, on the other hand the element that is nested inside the element that no has any position property, its position values are defined according with the browser edges, or in this case the father of the father */
+
+/* Hiding Parts of a Page */
+.hiding__container {
+    width: 40%;
+    margin-right: 5%;
+    float: left;
+    background-color: rgb(95, 228, 233);
+    padding: 4%;
+    border: 2px solid #fff;
+}
+
+.opacity__container {
+    margin-top: 5%;
+    clear: both;
+    overflow: hidden;
+}
+
+.hide-element {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    width: 30%;
+    padding: 2%;
+    background-color: rgb(242, 245, 51);
+    border: 2px solid white;
+}
+
+.hiding__container p:first-child {
+    font-weight: 600;
+    animation: color-blink 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color-blink {
+    from {
+        color: white;
+    }
+    to {
+        color: orange;
+    }
+}
+
+.visibility__container p:hover:first-child + .visibility-element {
+    visibility: hidden; /*The oposite value is visible*/
+}
+
+.display__container p:hover:first-child + .display-element {
+    display: none;
+}
+
+.opacity__container p:hover:first-child + .opacity-element {
+    opacity: 0;
+}
+
+/*Visibility, display and opacity are the three ways we can hide and show an element in our HTML, however the differences between each other is that opacity and visibility leave a hole in the space where they are, like if they were still there but invisible, in contrast to display: none, this property absolutly desappeared the element from the browser, it doesn't leaves a hole. One distantion from these three properties is that opacity is the prefered property to animate an element when this appears */
