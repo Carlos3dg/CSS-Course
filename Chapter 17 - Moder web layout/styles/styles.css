@@ -1,0 +1,109 @@
+html, body {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 1.4em;
+    text-align: center;
+    margin: 25px 0;
+}
+
+h2 {
+    font-size: 1.2em;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #fff;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+p, span {
+    font-size: 0.9em;
+}
+
+.container {
+    margin: 0 25px 30px;
+    padding: 2% 3%;
+    background-color: rgb(64, 223, 235);
+
+}
+
+.flex__items:nth-of-type(1n + 2) { 
+    margin-left: 20px;
+} /*Here we use the nth of type pseudo class to add a margin left property to every element but not the first one*/
+ 
+/* FLEX FLOW */
+.flex-flow__row {
+    display: flex;
+    flex-flow: row nowrap;
+} /*This property is a shorthand of two other properties: flex-direction and flex-wrap:
+    For example, we could have done the previus style like follow:
+        flex-direction: row;
+        flex-wrap: nowrap;
+The values that the flex-flow can take are row, row-reverse, cloumn, column-reverse for the first value and wrap, wrap-reverse and nowrap for the second value.
+*/
+
+.flex-flow__items {
+    background-color: #fff;
+    padding: 20px 20px;
+}
+
+/* Justify Content */
+.justify-flex__item {
+    width: 20%;
+    background-color: #fff;
+    padding: 20px 20px;
+    margin-bottom: 30px;
+    flex: 0 0 28%; /*This sets a width of 30% to every flex item*/
+}
+
+.flex-start__container {
+    display: flex;
+    justify-content: flex-start; /*Align the items to the left side, if they are in an row-reverse flow, the alignment is to the right side, so this property will always align the items to its beggining */
+}
+
+.flex-end__container {
+    display: flex;
+    justify-content: flex-end; /*Similar to the flex start, but this align the items to the right and if these are in row-reverse flow they are aligned to the opposited side */
+}
+
+.center__container {
+    display: flex;
+    justify-content: center; /*That the name says, center the items in the container*/
+}
+
+.space-between__container {
+    display: flex;
+    justify-content: space-between; /*This value adds equal space between each item, but to the leftmost and righmost items doens't add space between the edges of the container */
+}
+
+.space-between__container div{
+    margin-left: 0 !important;
+}
+
+.space-around__container {
+    display: flex;
+    justify-content: space-around; /*Space Around distribute space equal between each item but for the items at the edges in order to separate them from the container edge just add the half of the space that is between one item to another  */
+}
+
+.space-around__container div {
+    margin-left: 0 !important;
+}
+
+.space-evenly__container {
+    display: flex;
+    justify-content: space-evenly; /*Similar to space around but with the diference that it provides equal space to the edges items and the items between each other*/
+}
+
+.space-evenly__container div {
+    margin-left: 0 !important;
+}
